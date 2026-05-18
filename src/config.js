@@ -2,7 +2,7 @@
 // Saat dideploy, Vercel akan membaca VITE_API_URL dari environment variable
 // Jika tidak ada, dia akan otomatis menggunakan localhost (untuk komputer Anda)
 
-let apiBase = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+let apiBase = import.meta.env.VITE_API_URL || 'https://apiresto-orpin.vercel.app/api';
 
 // Bersihkan jika ada garis miring '/' di ujung URL untuk mencegah double-slash '//'
 if (apiBase.endsWith('/')) {
