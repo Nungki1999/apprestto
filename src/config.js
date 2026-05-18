@@ -4,16 +4,18 @@
 
 let apiBase = import.meta.env.VITE_API_URL || 'https://apiresto-orpin.vercel.app/api';
 
-// Bersihkan jika ada garis miring '/' di ujung URL untuk mencegah double-slash '//'
+// 1. Bersihkan jika ada garis miring '/' di ujung URL untuk mencegah double-slash '//'
 if (apiBase.endsWith('/')) {
   apiBase = apiBase.slice(0, -1);
 }
 
+// 2. Pastikan URL selalu diakhiri dengan '/api' (agar tidak terjadi 404)
+if (!apiBase.endsWith('/api')) {
+  apiBase = apiBase + '/api';
+}
+
 const API_BASE_URL = apiBase;
 
-
-
-
-
 export default API_BASE_URL;
+
 
