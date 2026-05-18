@@ -3,12 +3,13 @@ import Sidebar from '../components/Sidebar';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Clock, CheckCircle, ChefHat, Play, Check } from 'lucide-react';
 import Swal from 'sweetalert2';
+import API_BASE_URL from '../config';
 
 const Kitchen = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const API_URL = 'http://localhost:5000/api/order';
+  const API_URL = `${API_BASE_URL}/order`;
   const TOKEN = localStorage.getItem('auth_token');
 
   const fetchOrders = async () => {

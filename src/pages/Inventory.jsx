@@ -15,6 +15,7 @@ import {
   MinusCircle
 } from 'lucide-react';
 import Swal from 'sweetalert2';
+import API_BASE_URL from '../config';
 
 const Inventory = () => {
   const [items, setItems] = useState([]);
@@ -26,8 +27,8 @@ const Inventory = () => {
   const [amount, setAmount] = useState('');
   const [note, setNote] = useState('');
 
-  const API_STOCK_URL = 'http://localhost:5000/api/stock/items';
-  const API_MOVE_URL = 'http://localhost:5000/api/stock/movements';
+  const API_STOCK_URL = `${API_BASE_URL}/stock/items`;
+  const API_MOVE_URL = `${API_BASE_URL}/stock/movements`;
   const TOKEN = localStorage.getItem('auth_token');
 
   const fetchData = async () => {

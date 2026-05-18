@@ -14,6 +14,7 @@ import {
   Cell
 } from 'recharts';
 import { Download, Calendar, Users, Coffee } from 'lucide-react';
+import API_BASE_URL from '../config';
 
 const salesData = [
   { name: 'Sen', omzet: 2100, laba: 1200 },
@@ -37,7 +38,7 @@ const Reports = () => {
   const [reportData, setReportData] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const API_URL = 'http://localhost:5000/api/stats/reports';
+  const API_URL = `${API_BASE_URL}/stats/reports`;
   const TOKEN = localStorage.getItem('auth_token');
 
   useEffect(() => {

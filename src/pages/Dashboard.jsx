@@ -17,6 +17,7 @@ import {
   Tooltip, 
   ResponsiveContainer 
 } from 'recharts';
+import API_BASE_URL from '../config';
 
 const data = [
   { name: '08:00', sales: 400 },
@@ -70,7 +71,7 @@ const Dashboard = () => {
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const API_URL = 'http://localhost:5000/api/stats/dashboard';
+  const API_URL = `${API_BASE_URL}/stats/dashboard`;
   const TOKEN = localStorage.getItem('auth_token');
 
   useEffect(() => {
